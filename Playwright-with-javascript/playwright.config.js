@@ -25,6 +25,7 @@ export default defineConfig({
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
     baseURL: 'https://the-internet.herokuapp.com', // Centralized URL
+    trace: 'on-first-retry', // record trace when test fails first time
   },
 
   /* Configure projects for major browsers */
