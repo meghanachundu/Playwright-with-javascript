@@ -27,7 +27,7 @@ export default defineConfig({
     baseURL: 'https://the-internet.herokuapp.com', // Centralized URL
     trace: 'on-first-retry', // record trace when test fails first time
   },
-
+  workers: 4,
   /* Configure projects for major browsers */
   projects: [
     {
