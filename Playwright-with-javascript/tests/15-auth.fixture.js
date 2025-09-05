@@ -28,5 +28,3 @@ export const test = base.extend({
     await context.close();
   }
 });
-
-export { test };

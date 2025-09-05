@@ -1,19 +1,21 @@
-import { BasePage } from './BasePage';
-
-export class DashboardPage extends BasePage {
+export class DashboardPage {
   constructor(page) {
-    super(page);
+    this.page = page;
     this.newTodoInput = '.new-todo';
-    this.todoList = '.todo-list li';
+    this.todoItems = '.todo-list li';
+  }
+
+  async navigate(url) {
+    await this.page.goto(url);
   }
 
   async addTask(taskName) {
-    await this.fill(this.newTodoInput, taskName);
+    await this.page.fill(this.newTodoInput, taskName);
     await this.page.keyboard.press('Enter');
   }
 
   async getTasks() {
-    return await this.page.locator(this.todoList).allTextContents();
+    return await this.page.locator(this.todoItems).allTextContents();
   }
 
   async deleteTask(taskName) {
